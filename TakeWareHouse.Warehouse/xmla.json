@@ -1,0 +1,731 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "crm_cust_info",
+        "sourceLineageTag": "[Gold].[crm_cust_info]",
+        "columns": [
+          {
+            "name": "cst_id",
+            "dataType": "int64",
+            "sourceColumn": "cst_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "cst_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cst_key",
+            "dataType": "string",
+            "sourceColumn": "cst_key",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "cst_key",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cst_firstname",
+            "dataType": "string",
+            "sourceColumn": "cst_firstname",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "cst_firstname",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cst_lastname",
+            "dataType": "string",
+            "sourceColumn": "cst_lastname",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "cst_lastname",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cst_marital_status",
+            "dataType": "string",
+            "sourceColumn": "cst_marital_status",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "cst_marital_status",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cst_gndr",
+            "dataType": "string",
+            "sourceColumn": "cst_gndr",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "cst_gndr",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "cst_create_date",
+            "dataType": "dateTime",
+            "sourceColumn": "cst_create_date",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "cst_create_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "dwh_create_date",
+            "dataType": "dateTime",
+            "sourceColumn": "dwh_create_date",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "dwh_create_date",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "crm_cust_info",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "Gold"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "bing_covid-19_data1",
+        "sourceLineageTag": "[dbo].[bing_covid-19_data1]",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "updated",
+            "dataType": "dateTime",
+            "sourceColumn": "updated",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "updated",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "confirmed",
+            "dataType": "int64",
+            "sourceColumn": "confirmed",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "confirmed",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "confirmed_change",
+            "dataType": "int64",
+            "sourceColumn": "confirmed_change",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "confirmed_change",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "deaths",
+            "dataType": "int64",
+            "sourceColumn": "deaths",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "deaths",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "deaths_change",
+            "dataType": "int64",
+            "sourceColumn": "deaths_change",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "deaths_change",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "recovered",
+            "dataType": "int64",
+            "sourceColumn": "recovered",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "recovered",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "recovered_change",
+            "dataType": "int64",
+            "sourceColumn": "recovered_change",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "recovered_change",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "latitude",
+            "dataType": "double",
+            "sourceColumn": "latitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "latitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "longitude",
+            "dataType": "double",
+            "sourceColumn": "longitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "longitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "iso2",
+            "dataType": "string",
+            "sourceColumn": "iso2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "iso2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "iso3",
+            "dataType": "string",
+            "sourceColumn": "iso3",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "iso3",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "country_region",
+            "dataType": "string",
+            "sourceColumn": "country_region",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "country_region",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "admin_region_1",
+            "dataType": "string",
+            "sourceColumn": "admin_region_1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "admin_region_1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "iso_subdivision",
+            "dataType": "string",
+            "sourceColumn": "iso_subdivision",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "iso_subdivision",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "admin_region_2",
+            "dataType": "string",
+            "sourceColumn": "admin_region_2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "admin_region_2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "load_time",
+            "dataType": "dateTime",
+            "sourceColumn": "load_time",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "load_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "bing_covid-19_data1",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "bing_covid-19_data",
+        "sourceLineageTag": "[dbo].[bing_covid-19_data]",
+        "columns": [
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "updated",
+            "dataType": "dateTime",
+            "sourceColumn": "updated",
+            "formatString": "General Date",
+            "sourceProviderType": "date",
+            "sourceLineageTag": "updated",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "confirmed",
+            "dataType": "int64",
+            "sourceColumn": "confirmed",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "confirmed",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "confirmed_change",
+            "dataType": "int64",
+            "sourceColumn": "confirmed_change",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "confirmed_change",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "deaths",
+            "dataType": "int64",
+            "sourceColumn": "deaths",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "deaths",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "deaths_change",
+            "dataType": "int64",
+            "sourceColumn": "deaths_change",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "deaths_change",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "recovered",
+            "dataType": "int64",
+            "sourceColumn": "recovered",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "recovered",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "recovered_change",
+            "dataType": "int64",
+            "sourceColumn": "recovered_change",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "recovered_change",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "latitude",
+            "dataType": "double",
+            "sourceColumn": "latitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "latitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "longitude",
+            "dataType": "double",
+            "sourceColumn": "longitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "longitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "iso2",
+            "dataType": "string",
+            "sourceColumn": "iso2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "iso2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "iso3",
+            "dataType": "string",
+            "sourceColumn": "iso3",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "iso3",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "country_region",
+            "dataType": "string",
+            "sourceColumn": "country_region",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "country_region",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "admin_region_1",
+            "dataType": "string",
+            "sourceColumn": "admin_region_1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "admin_region_1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "iso_subdivision",
+            "dataType": "string",
+            "sourceColumn": "iso_subdivision",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "iso_subdivision",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "admin_region_2",
+            "dataType": "string",
+            "sourceColumn": "admin_region_2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "admin_region_2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "load_time",
+            "dataType": "dateTime",
+            "sourceColumn": "load_time",
+            "formatString": "General Date",
+            "sourceProviderType": "datetime2",
+            "sourceLineageTag": "load_time",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "bing_covid-19_data",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}

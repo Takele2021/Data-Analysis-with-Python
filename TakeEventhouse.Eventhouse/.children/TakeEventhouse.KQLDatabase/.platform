@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDatabase",
+    "displayName": "TakeEventhouse",
+    "description": "TakeEventhouse"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b7f06a22-8f0f-b345-457d-2106754fd2c1"
+  }
+}
